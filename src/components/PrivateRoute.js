@@ -1,8 +1,9 @@
-import LocalStorage from "../helpers/localStorage";
-import { Navigate } from "react-router-dom";
+/* eslint-disable react/prop-types */
+import { Navigate } from 'react-router-dom';
+import LocalStorage from '../helpers/localStorage';
 
 const PrivateRoute = ({ children }) => {
-  let token = LocalStorage.getToken();
+  const token = LocalStorage.getUser();
   return token ? children : <Navigate to="/login" />;
 };
 

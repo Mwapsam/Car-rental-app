@@ -1,14 +1,12 @@
 const LocalStorage = {
-  getUser: () => {
-    return JSON.parse(localStorage.getItem("user"));
-  },
+  getUser: () => JSON.parse(localStorage.getItem('user')),
 
   setUser: (value) => {
-    localStorage.setItem("user", JSON.stringify(value));
+    localStorage.setItem('user', JSON.stringify(value));
   },
 
   removeUser: () => {
-    localStorage.removeItem("user");
+    localStorage.removeItem('user');
   },
 };
 

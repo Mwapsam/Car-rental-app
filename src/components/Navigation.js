@@ -1,7 +1,8 @@
-import React from "react";
-import { NavLink as Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../store/user";
+import React from 'react';
+import { NavLink as Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../store/user';
+
 const Navigation = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
@@ -27,7 +28,9 @@ const Navigation = () => {
             <li>
               <Link to="/private">Private</Link>
             </li>
-            <button onClick={() => dispatch(logout())}>Logout</button>
+            <button type="button" onClick={() => dispatch(logout())}>
+              Logout
+            </button>
           </>
         )}
       </ul>

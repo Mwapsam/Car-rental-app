@@ -1,31 +1,32 @@
-import { createSlice } from "@reduxjs/toolkit";
-import UserService from "../services/user.service";
-import LocalStorage from "../helpers/localStorage";
+/* eslint-disable consistent-return */
+/* eslint-disable no-unused-vars */
+import { createSlice } from '@reduxjs/toolkit';
+import UserService from '../services/user.service';
+import LocalStorage from '../helpers/localStorage';
 
-const initialUser = localStorage.getItem("user")
-  ? JSON.parse(localStorage.getItem("user"))
+const initialUser = localStorage.getItem('user')
+  ? JSON.parse(localStorage.getItem('user'))
   : null;
 
 const slice = createSlice({
-  name: "user",
+  name: 'user',
   initialState: {
-    isLoggedIn: initialUser ? true : false,
+    isLoggedIn: !!initialUser,
     data: initialUser,
   },
   reducers: {
     signupSuccess: (state, action) => {
       state.isLoggedIn = true;
       state.data = action.payload;
-      localStorage.setItem("token", JSON.stringify(action.payload));
-      window.history.pushState({}, "", "/");
+      localStorage.setItem('token', JSON.stringify(action.payload));
+      window.history.pushState({}, '', '/');
       window.location.reload();
     },
     loginSuccess: (state, action) => {
-      console.log(action.payload);
       state.isLoggedIn = true;
       state.data = action.payload;
-      localStorage.setItem("user", JSON.stringify(action.payload));
-      window.history.pushState({}, "", "/");
+      localStorage.setItem('user', JSON.stringify(action.payload));
+      window.history.pushState({}, '', '/');
       window.location.reload();
     },
     loginFailure: (state) => {
@@ -34,9 +35,9 @@ const slice = createSlice({
     signupFailure: (state) => {
       state = initialUser;
     },
-    logoutUser: (state, action) => {
+    logoutUser: () => {
       LocalStorage.removeUser();
-      window.history.pushState({}, "", "/login");
+      window.history.pushState({}, '', '/login');
       window.location.reload();
     },
     setMessage: (state, action) => {
@@ -68,7 +69,6 @@ export const login = (formData) => async (dispatch) => {
       return dispatch(loginSuccess(loggedInUser));
     }
     if (error) {
-      console.log("This is the mapped error", error);
       dispatch(setMessage(error));
       return dispatch(loginFailure());
     }
@@ -81,7 +81,7 @@ export const signup = (formData) => async (dispatch) => {
     const {
       data: { user, jwt, errors },
     } = await UserService.signup(formData);
-    console.log(user);
+
     if (user && jwt) {
       const signedUpUser = { ...user, token: jwt };
       return dispatch(signupSuccess(signedUpUser));
@@ -90,7 +90,7 @@ export const signup = (formData) => async (dispatch) => {
       return dispatch(signupFailure());
     }
   } catch (e) {
-    return console.error(e.message);
+    // console
   }
 };
 

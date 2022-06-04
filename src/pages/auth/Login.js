@@ -1,13 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../store/user";
-
-import React, { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { login } from '../../store/user';
 
 const Login = () => {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const [values, setValues] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const handleInputChange = (e) => {
@@ -23,19 +23,18 @@ const Login = () => {
     dispatch(login(values));
   };
 
-  const dispatch = useDispatch();
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input
-          type={"text"}
+          type="text"
           value={values.email}
           onChange={handleInputChange}
           name="email"
           placeholder="Email"
         />
         <input
-          type={"password"}
+          type="password"
           value={values.password}
           onChange={handleInputChange}
           name="password"
