@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // create thunk
 export const getCars = createAsyncThunk('cars/getCars',
-  async () => fetch('http://localhost:3001/api/v1/cars').then((res) => res.json()));
+  async () => fetch('http://localhost:3000/api/v1/cars').then((res) => res.json()));
 
 // create slice
 export const carsSlice = createSlice({

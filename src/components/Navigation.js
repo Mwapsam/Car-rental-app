@@ -12,6 +12,9 @@ const Navigation = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
+        <li>
+          <Link to="/cars">Cars</Link>
+        </li>
         {!user.data && (
           <>
             <li>
