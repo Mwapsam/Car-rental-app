@@ -19,7 +19,7 @@ export const carsSlice = createSlice({
         [getCars.pending]: (state) => {
             state.status = 'pending'
         },
-        [getCars.fullfilled]: (state, action) => {
+        [getCars.fulfilled]: (state, action) => {
             state.carList = payload
             state.status = 'success'
         },
