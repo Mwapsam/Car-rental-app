@@ -12,7 +12,7 @@ export const getCars = createAsyncThunk('cars/getCars',
 export const carsSlice = createSlice({
     name: 'cars',
     initialState: {
-        carList: [],
+        carsList: [],
         status: null,
     },
     extraReducers: {
@@ -20,7 +20,7 @@ export const carsSlice = createSlice({
             state.status = 'pending'
         },
         [getCars.fulfilled]: (state, action) => {
-            state.carList = payload
+            state.carsList = action.payload
             state.status = 'success'
         },
         [getCars.rejected]: (state) => {
