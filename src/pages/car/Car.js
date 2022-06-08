@@ -7,23 +7,27 @@ const Car = () => {
   const { carsList } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
   const { carId } = useParams();
-	const carDetail = carsList.filter((car) => car.id === +carId)
- const car = {...carDetail[0]}
-	useEffect(() => {
+  const carDetail = carsList.filter((car) => car.id === +carId);
+  const car = { ...carDetail[0] };
+  useEffect(() => {
     dispatch(getCars());
   }, []);
-	
-	return (
-<>
-		<h1>{car.name}</h1>
-		<h1>{car.image}</h1>
-		<p>${car.price}/day</p>
-		<p>{car.description}</p>
-		{ car.reserved ? 
-		(<button disabled>Reserved</button>) :
-    (<button>Reserve</button>)
-		}
-</>
-	)};
+
+  return (
+    <>
+      <h1>{car.name}</h1>
+      <h1>{car.image}</h1>
+      <p>
+        $
+        {car.price}
+        /day
+      </p>
+      <p>{car.description}</p>
+      { car.reserved
+		  ? (<button disabled>Reserved</button>)
+        : (<button>Reserve</button>)}
+    </>
+  );
+};
 
 export default Car;
