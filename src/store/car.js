@@ -1,8 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // create thunk
-export const getCars = createAsyncThunk('cars/getCars',
-  async () => fetch('http://localhost:3000/api/v1/cars').then((res) => res.json()));
+export const getCars = createAsyncThunk(
+  'cars/getCars',
+  async () => {
+    const getCarsData = await fetch('http://localhost:3000/api/v1/cars');
+    const res = await getCarsData.json();
+    return res;
+  },
+);
 
 // create slice
 export const carsSlice = createSlice({
@@ -15,8 +21,8 @@ export const carsSlice = createSlice({
     [getCars.pending]: (state) => {
       state.status = 'pending';
     },
-    [getCars.fulfilled]: (state, action) => {
-      state.carsList = action.payload;
+    [getCars.fulfilled]: (state, { payload }) => {
+      state.carsList = payload;
       state.status = 'success';
     },
     [getCars.rejected]: (state) => {
