@@ -12,7 +12,13 @@ const CarsList = () => {
   return (
     <div>
       <h1>Cars</h1>
-      {carsList && carsList.map((car) => <p key={car.id}>{car.name}</p>)}
+      {carsList && carsList.map((car) => (
+        <div key={car.id}>
+          <img src={car.image} alt={car.name}/>
+          <h3>{car.name}</h3>
+          <p>{car.description}</p>
+        </div>
+      ))}
     </div>
   );
 };
