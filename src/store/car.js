@@ -1,14 +1,5 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
-// create thunk
-export const getCars = createAsyncThunk(
-  'cars/getCars',
-  async () => {
-    const getCarsData = await fetch('http://localhost:3000/api/v1/cars');
-    const res = await getCarsData.json();
-    return res;
-  },
-);
+import { createSlice } from '@reduxjs/toolkit';
+import getCars from '../services/car.service';
 
 // create slice
 export const carsSlice = createSlice({
