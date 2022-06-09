@@ -24,9 +24,8 @@ const Car = () => {
         /day
       </p>
       <p>{car.description}</p>
-      { car.reserved
-		  ? (<button disabled>Reserved</button>)
-        : (<button>Reserve</button>)}
+      { car.reserved ? (<button type="button" disabled>Reserved</button>)
+        : (<button type="button">Reserve</button>)}
     </>
   );
 };
