@@ -6,8 +6,9 @@ import getCars from '../../services/car.service';
 const CarsList = () => {
   const dispatch = useDispatch();
   const { carsList } = useSelector((state) => state.cars);
+  const isCarsStored  = useSelector((state) => state.cars.isCarsStored);
   useEffect(() => {
-    dispatch(getCars());
+    if (!isCarsStored) {dispatch(getCars());}
   }, []);
 
   return (

@@ -11,13 +11,16 @@ export const carsSlice = createSlice({
   extraReducers: {
     [getCars.pending]: (state) => {
       state.status = 'pending';
+      state.isCarsStored = false;
     },
     [getCars.fulfilled]: (state, { payload }) => {
       state.carsList = payload;
       state.status = 'success';
+      state.isCarsStored = true;
     },
     [getCars.rejected]: (state) => {
       state.status = 'failed';
+      state.isCarsStored = false;
     },
   },
 });
