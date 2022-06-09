@@ -14,8 +14,8 @@ const CarsList = () => {
     <div>
       <h1>Cars</h1>
       {carsList && carsList.map((car) => (
-        <Link to={`/cars/${car.id}`}>
-        <div key={car.id} className="car-card">
+        <Link to={`/cars/${car.id}`}  key={car.id} >
+        <div className="car-card">
           <img src={car.image} alt={car.name} />
           <h3>{car.name}</h3>
           <p>{car.description}</p>
