@@ -16,7 +16,7 @@ const Car = () => {
   return (
     <>
       <h1>{car.name}</h1>
-      <h1>{car.image}</h1>
+      <img src={car.image} alt={car.name} />
       <p>
         $
         {car.price}
