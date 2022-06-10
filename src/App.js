@@ -10,6 +10,7 @@ import Reservations from './pages/reservation/Reservations';
 import AddReservation from './pages/reservation/AddReservation';
 import Home from './pages/Home';
 import Navigation from './components/Navigation';
+import DeleteCars from './pages/car/DeleteCars';
 
 const App = () => (
   <BrowserRouter>
@@ -28,6 +29,15 @@ const App = () => (
             element={(
               <PrivateRoute>
                 <AddCar />
+              </PrivateRoute>
+              )}
+          />
+          <Route
+            path="deleteCars"
+            index={false}
+            element={(
+              <PrivateRoute>
+                <DeleteCars />
               </PrivateRoute>
               )}
           />
