@@ -5,8 +5,7 @@ import getCars from '../../services/car.service';
 
 const Car = () => {
   const dispatch = useDispatch();
-  const { carsList } = useSelector((state) => state.cars);
-  const isCarsStored = useSelector((state) => state.cars.isCarsStored);
+  const { carsList, isCarsStored } = useSelector((state) => state.cars);
   const { carId } = useParams();
   const carDetail = carsList.filter((car) => car.id === +carId);
   const car = { ...carDetail[0] };
