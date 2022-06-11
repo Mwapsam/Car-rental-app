@@ -1,8 +1,21 @@
-import React from 'react'
+import {React, useEffect} from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteCars } from '../../services/car.service';
 
-function DeleteCars() {
+const DeleteCars = () => {
+	const dispatch = useDispatch()
+	const user = useSelector((state) => state.user.data);
+	const cars = useSelector((state) => state.cars);
+	useEffect(()=> {
+	dispatch(deleteCars({id: 4, token: user.token}));
+	console.log(cars);
+	}, [])
+
 	return (
-		<div>DeleteCars</div>
+		<>
+			<div>DeleteCars</div>
+			<button type="button">delete</button>
+		</>
 	)
 }
 
