@@ -12,7 +12,6 @@ const DeleteCars = () => {
 
 	const deleteCar = (id) => {
 		dispatch(deleteCars({id, token}))
-    console.log(id, token);
 	}
 
 	return (
