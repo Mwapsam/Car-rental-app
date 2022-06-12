@@ -10,7 +10,6 @@ const initState = {
   user_id: '', car_id: '', city: '', duration: '', date_reserved: '',
 };
 
-
 const Car = () => {
   const [reserve, setReserve] = useState(initState);
 
