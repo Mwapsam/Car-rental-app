@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import getCars from '../services/car.service';
-import { deleteCars } from '../services/car.service';
+import { getCars, deleteCars } from '../services/car.service';
 
 // create slice
 export const carsSlice = createSlice({
@@ -32,6 +31,7 @@ export const carsSlice = createSlice({
       state.isCarsStored = false;
     },
     [deleteCars.fulfilled]: (state, {payload}) => {
+      console.log(payload);
       state.carsList = state.carsList.filter((car) => car.id !== +payload);
       state.status = 'success delete action';
       console.log(state.carsList);

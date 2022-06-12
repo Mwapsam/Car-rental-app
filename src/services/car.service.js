@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // create thunk
-const getCars = createAsyncThunk(
+export const getCars = createAsyncThunk(
   'cars/getCars',
   async () => {
     const getCarsData = axios.get('http://localhost:3000/api/v1/cars');
@@ -21,5 +21,3 @@ export const deleteCars = createAsyncThunk(
   },
 );
 
-
-export default getCars;
