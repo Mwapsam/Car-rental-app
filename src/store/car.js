@@ -10,6 +10,8 @@ export const carsSlice = createSlice({
     status: null,
   },
   extraReducers: {
+
+    // get cars
     [getCars.pending]: (state) => {
       state.status = 'pending';
       state.isCarsStored = false;
@@ -23,22 +25,21 @@ export const carsSlice = createSlice({
       state.status = 'failed';
       state.isCarsStored = false;
     },
-    // [deleteCars.pending]: (state, payload) => {
-    //   state.status = 'pending delete';
-    //   state.isCarsStored = false;
-    //   console.log(state.status);
-    // },
-    // [deleteCars.fulfilled]: (state, payload) => {
-    //   state.carsList = state.carsList.filter((car) => car.id !== +payload);
-    //   state.status = 'success delete';
-    //   console.log(state.carsList);
-    //   console.log(state.status);
-    // },
-    // [deleteCars.rejected]: (state, payload) => {
-    //   state.status = 'failed delete';
-    //   state.isCarsStored = false;
-    //   console.log(state.status);
-    // },
+
+    // delete cars
+    [deleteCars.pending]: (state) => {
+      state.status = 'pending delete action';
+      state.isCarsStored = false;
+    },
+    [deleteCars.fulfilled]: (state, {payload}) => {
+      state.carsList = state.carsList.filter((car) => car.id !== +payload);
+      state.status = 'success delete action';
+      console.log(state.carsList);
+    },
+    [deleteCars.rejected]: (state) => {
+      state.status = 'failed delete action';
+      state.isCarsStored = false;
+    },
   },
 });
 
