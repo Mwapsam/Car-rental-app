@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import getCars from '../services/car.service';
+import { getCars, deleteCars } from '../services/car.service';
 
 // create slice
 export const carsSlice = createSlice({
@@ -9,6 +9,8 @@ export const carsSlice = createSlice({
     status: null,
   },
   extraReducers: {
+
+    // get cars
     [getCars.pending]: (state) => {
       state.status = 'pending';
       state.isCarsStored = false;
@@ -21,6 +23,18 @@ export const carsSlice = createSlice({
     [getCars.rejected]: (state) => {
       state.status = 'failed';
       state.isCarsStored = false;
+    },
+
+    // delete cars
+    [deleteCars.pending]: (state) => {
+      state.status = 'pending delete action';
+    },
+    [deleteCars.fulfilled]: (state, { payload }) => {
+      state.carsList = state.carsList.filter((car) => car.id !== +payload);
+      state.status = 'success delete action';
+    },
+    [deleteCars.rejected]: (state) => {
+      state.status = 'failed delete action';
     },
   },
 });

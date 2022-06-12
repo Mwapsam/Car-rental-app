@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import getCars from '../../services/car.service';
+import { getCars } from '../../services/car.service';
 import LocalStorage from '../../helpers/localStorage';
 import { CreateReservations } from '../../services/reservation.service';
 

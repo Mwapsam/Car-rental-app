@@ -34,6 +34,9 @@ const Navigation = () => {
             <li>
               <Link to="/private">Private</Link>
             </li>
+            <li>
+              <Link to="/cars/deleteCars">Delete Cars</Link>
+            </li>
             <button type="button" onClick={() => dispatch(logout())}>
               Logout
             </button>
