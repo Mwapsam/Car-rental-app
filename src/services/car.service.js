@@ -11,13 +11,11 @@ export const getCars = createAsyncThunk(
   },
 );
 
-
 // delete a car
 export const deleteCars = createAsyncThunk(
   'cars/deleteCars',
-  async ({id, token}) => {
-    axios.delete(`http://localhost:3000/api/v1/cars/${id}`, {headers:{Authorization: token}});
+  async ({ id, token }) => {
+    axios.delete(`http://localhost:3000/api/v1/cars/${id}`, { headers: { Authorization: token } });
     return id;
   },
 );
-

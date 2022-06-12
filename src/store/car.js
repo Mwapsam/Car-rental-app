@@ -29,7 +29,7 @@ export const carsSlice = createSlice({
     [deleteCars.pending]: (state) => {
       state.status = 'pending delete action';
     },
-    [deleteCars.fulfilled]: (state, {payload}) => {
+    [deleteCars.fulfilled]: (state, { payload }) => {
       state.carsList = state.carsList.filter((car) => car.id !== +payload);
       state.status = 'success delete action';
     },
