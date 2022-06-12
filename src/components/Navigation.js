@@ -15,6 +15,9 @@ const Navigation = () => {
         <li>
           <Link to="/cars">Cars</Link>
         </li>
+        <li>
+          <Link to="/reservations">My Reservations</Link>
+        </li>
         {!user.data && (
           <>
             <li>
