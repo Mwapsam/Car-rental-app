@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useState } from 'react';
 import { login } from '../../store/user';
@@ -24,25 +25,42 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={values.email}
-          onChange={handleInputChange}
-          name="email"
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          value={values.password}
-          onChange={handleInputChange}
-          name="password"
-          placeholder="Password"
-        />
-        <button type="submit">Login</button>
-      </form>
-      {user && user.error && <p>{user.error}</p>}
+    <div className="w-full">
+      <div className="flex justify-between items-center top-0 md:sticky border-b-2 border-neutral-2 w-full py-4 mb-8 bg-zinc-50">
+        <h4 className="font-black text-lg md:text-2xl uppercase p-0 m-0 ">Login</h4>
+      </div>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <div className="w-full ">
+            <label className="block uppercase tracking-wide text-neutral-800 text-xs font-bold mb-2">
+              Email
+            </label>
+            <input
+              type="text"
+              value={values.email}
+              onChange={handleInputChange}
+              name="email"
+              placeholder="Email"
+              className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200 py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            />
+          </div>
+          <div className="w-full ">
+            <label className="block uppercase tracking-wide text-neutral-800 text-xs font-bold mb-2">
+              Password
+            </label>
+            <input
+              type="password"
+              value={values.password}
+              onChange={handleInputChange}
+              name="password"
+              placeholder="Password"
+              className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200 py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            />
+          </div>
+          <button className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-6" type="submit">Login</button>
+        </form>
+        {user && user.error && <p>{user.error}</p>}
+      </div>
     </div>
   );
 };
