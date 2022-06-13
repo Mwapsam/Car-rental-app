@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCars, deleteCars } from '../services/car.service';
+import { getCars, deleteCars, createCar } from '../services/car.service';
 
 // create slice
 export const carsSlice = createSlice({
@@ -35,6 +35,10 @@ export const carsSlice = createSlice({
     },
     [deleteCars.rejected]: (state) => {
       state.status = 'failed delete action';
+    },
+
+    [createCar.fulfilled]: (state, action) => {
+      state.cars.unshift(action.payload);
     },
   },
 });
