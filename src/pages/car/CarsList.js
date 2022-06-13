@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import getCars from '../../services/car.service';
+import { getCars } from '../../services/car.service';
 
 const CarsList = () => {
   const dispatch = useDispatch();
-  const { carsList } = useSelector((state) => state.cars);
-  const isCarsStored = useSelector((state) => state.cars.isCarsStored);
+  const { carsList, isCarsStored } = useSelector((state) => state.cars);
   useEffect(() => {
     if (!isCarsStored) { dispatch(getCars()); }
   }, []);
