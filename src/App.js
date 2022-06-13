@@ -7,62 +7,61 @@ import Car from './pages/car/Car';
 import CarsList from './pages/car/CarsList';
 import AddCar from './pages/car/AddCar';
 import Reservations from './pages/reservation/Reservations';
-import AddReservation from './pages/reservation/AddReservation';
-import Home from './pages/Home';
-import Navigation from './components/Navigation';
 import DeleteCars from './pages/car/DeleteCars';
+import SideNav from './components/navigation/SideNav';
+import MobileNav from './components/navigation/MobileNav';
+import AdminRoute from './components/AdminRoute';
 
 const App = () => (
   <BrowserRouter>
-    <>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cars">
-          <Route index element={<CarsList />} />
-          <Route index={false} path=":carId" element={<Car />} />
-          <Route
-            path="new"
-            index={false}
-            element={(
-              <PrivateRoute>
-                <AddCar />
-              </PrivateRoute>
-              )}
-          />
-          <Route
-            path="deleteCars"
-            index={false}
-            element={(
-              <PrivateRoute>
-                <DeleteCars />
-              </PrivateRoute>
-              )}
-          />
-        </Route>
+    <div className="flex">
+      <SideNav />
+      <div className="flex-1 md:ml-60">
+        <MobileNav />
+        <div className="py-6 px-8 mt-10 md:mt-0">
+          <Routes>
+            <Route path="/" element={<CarsList />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/cars">
+              <Route index element={<CarsList />} />
+              <Route index={false} path=":carId" element={<Car />} />
+              <Route
+                path="new"
+                index={false}
+                element={(
+                  <AdminRoute>
+                    <AddCar />
+                  </AdminRoute>
+                )}
+              />
+              <Route
+                path="deleteCars"
+                index={false}
+                element={(
+                  <AdminRoute>
+                    <DeleteCars />
+                  </AdminRoute>
+                )}
+              />
+            </Route>
 
-        <Route path="/reservations">
-          <Route
-            index
-            element={(
-              <PrivateRoute>
-                <Reservations />
-              </PrivateRoute>
-              )}
-          />
-          <Route
-            path="new"
-            element={(
-              <PrivateRoute>
-                <AddReservation />
-              </PrivateRoute>
-              )}
-          />
-        </Route>
-      </Routes>
-    </>
+            <Route path="/reservations">
+              <Route
+                index
+                element={(
+                  <PrivateRoute>
+                    <Reservations />
+                  </PrivateRoute>
+                )}
+              />
+
+            </Route>
+          </Routes>
+        </div>
+
+      </div>
+    </div>
   </BrowserRouter>
 );
 
