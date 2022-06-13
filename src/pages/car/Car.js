@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { Modal, Button } from 'react-bootstrap';
 import getCars from '../../services/car.service';
 import LocalStorage from '../../helpers/localStorage';
 import { CreateReservations } from '../../services/reservation.service';
@@ -12,6 +13,9 @@ const initState = {
 
 const Car = () => {
   const [reserve, setReserve] = useState(initState);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const dispatch = useDispatch();
   const { carsList } = useSelector((state) => state.cars);
@@ -32,6 +36,7 @@ const Car = () => {
       duration: reserve.duration,
       date_reserved: reserve.date_reserved,
     }));
+    setShow(false);
   };
 
   const handleChange = (e) => {
@@ -52,23 +57,31 @@ const Car = () => {
         {car.price}
         /day
       </p>
-      <form onReset={handleSubmit}>
-        <label>
-          City:
-          <input type="text" name="city" onChange={handleChange} />
-        </label>
-        <label>
-          Duration:
-          <input type="text" name="duration" onChange={handleChange} />
-        </label>
-        <label>
-          Date:
-          <input type="text" name="date_reserved" onChange={handleChange} />
-        </label>
-        { car.reserved ? (<button type="button" disabled>Reserved</button>)
-          : (<button type="button" onClick={createReserve}>Reserve</button>)}
-      </form>
-      <p>{car.description}</p>
+      <Button className="nextButton" onClick={handleShow}>
+        Reserve Car
+      </Button>
+      <Modal show={show} onHide={handleClose} size="sm">
+        <Modal.Header closeButton>
+          <Modal.Title>Add Reservation</Modal.Title>
+        </Modal.Header>
+        <form onReset={handleSubmit}>
+          <label>
+            City:
+            <input type="text" name="city" onChange={handleChange} />
+          </label>
+          <label>
+            Duration:
+            <input type="text" name="duration" onChange={handleChange} />
+          </label>
+          <label>
+            Date:
+            <input type="text" name="date_reserved" onChange={handleChange} />
+          </label>
+          { car.reserved ? (<button type="button" disabled>Reserved</button>)
+            : (<button type="button" onClick={createReserve}>Reserve</button>)}
+        </form>
+        <p>{car.description}</p>
+      </Modal>
     </>
   );
 };
