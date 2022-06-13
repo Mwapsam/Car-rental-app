@@ -18,7 +18,7 @@ const slice = createSlice({
     signupSuccess: (state, action) => {
       state.isLoggedIn = true;
       state.data = action.payload;
-      localStorage.setItem('token', JSON.stringify(action.payload));
+      localStorage.setItem('user', JSON.stringify(action.payload));
       window.history.pushState({}, '', '/');
       window.location.reload();
     },
@@ -61,11 +61,13 @@ const {
 export const login = (formData) => async (dispatch) => {
   try {
     const {
-      data: { user, jwt, error },
+      data: {
+        user, jwt, error, role,
+      },
     } = await UserService.login(formData);
 
     if (user && jwt) {
-      const loggedInUser = { ...user, token: jwt };
+      const loggedInUser = { ...user, token: jwt, role };
       return dispatch(loginSuccess(loggedInUser));
     }
     if (error) {
@@ -79,11 +81,13 @@ export const login = (formData) => async (dispatch) => {
 export const signup = (formData) => async (dispatch) => {
   try {
     const {
-      data: { user, jwt, errors },
+      data: {
+        user, jwt, errors, role,
+      },
     } = await UserService.signup(formData);
 
     if (user && jwt) {
-      const signedUpUser = { ...user, token: jwt };
+      const signedUpUser = { ...user, token: jwt, role };
       return dispatch(signupSuccess(signedUpUser));
     }
     if (errors) {
