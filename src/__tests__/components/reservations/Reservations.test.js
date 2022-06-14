@@ -19,6 +19,6 @@ describe('Reservation', () => {
 
   it('should render the title', () => {
     const { getByText } = render(<Reservations />);
-    expect(getByText('Reservations')).toBeInTheDocument();
+    expect(getByText('My Reservations')).toBeInTheDocument();
   });
 });

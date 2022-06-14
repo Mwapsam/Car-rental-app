@@ -63,6 +63,8 @@ const Car = () => {
         <div className="w-full md:w-2/6">
 
           <h4 className="font-black text-lg uppercase border-b border-neutral-300 pb-2 mb-4">Reserve Car</h4>
+          {user
+          && (
           <form onReset={handleSubmit}>
 
             <div className="w-full ">
@@ -88,7 +90,9 @@ const Car = () => {
 
             { car.reserved ? (<button className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-6" type="button" disabled>Reserved</button>)
               : (<button type="button" className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-6" onClick={createReserve}>Reserve</button>)}
+
           </form>
+          )}
 
           <h4 className="font-black text-lg uppercase border-b border-neutral-300 pb-2 mt-8 mb-4">Details</h4>
           <p>{car.description}</p>

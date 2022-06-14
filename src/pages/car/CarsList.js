@@ -16,8 +16,9 @@ const CarsList = () => {
 
   return (
     <div className="w-full">
+      <h4 className="font-black text-lg md:text-2xl uppercase p-0 m-0 ">Available Cars</h4>
+      {user.data && (
       <div className="flex justify-between items-center top-0 md:sticky border-b-2 border-neutral-2 w-full py-4 mb-8 bg-zinc-50">
-        <h4 className="font-black text-lg md:text-2xl uppercase p-0 m-0 ">Available Cars</h4>
         {user.data.role === 'admin' && (
         <div className="flex gap-x-4">
           <Link to="/cars/new" className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-6">Create</Link>
@@ -26,6 +27,7 @@ const CarsList = () => {
         )}
 
       </div>
+      )}
 
       <div className="grid grid-cols-3 gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2">
         {carsList
