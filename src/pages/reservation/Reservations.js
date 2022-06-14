@@ -23,7 +23,7 @@ const Reservations = () => {
         </div>
 
         <div className="grid grid-cols-3 gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2">
-          {res.map((res) => (
+          {res && res.map((res) => (
             <div key={res.id} className="bg-white border border-neutral-300">
               <div>
                 <div className="flex gap-8 p-4">

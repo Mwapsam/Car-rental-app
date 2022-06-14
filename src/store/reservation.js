@@ -21,6 +21,7 @@ export const reservationsSlice = createSlice({
     },
     [CreateReservations.fulfilled]: (state, action) => {
       state.reservations.unshift(action.payload);
+      console.log(action.payload);
     },
   },
 });
