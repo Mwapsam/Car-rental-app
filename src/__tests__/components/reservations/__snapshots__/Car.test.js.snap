@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Cars List component 1`] = `
+<div
+  className="w-full"
+>
+  <h4
+    className="font-black text-lg md:text-2xl uppercase p-0 m-0 "
+  >
+    Available Cars
+  </h4>
+  <div
+    className="grid grid-cols-3 gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2"
+  />
+</div>
+`;
