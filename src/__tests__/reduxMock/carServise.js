@@ -1,12 +1,17 @@
-import ApiMock from "./ApiMock"
+import ApiMock from "./ApiMock";
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const getCars = () => {
-	return ApiMock;
-}
+// export const getCars = () => {
+// 	return ApiMock;
+// }
+export const getCars = createAsyncThunk (
+	'cars/getCars', async () => {	
+		return ApiMock;
+	}
+);
 
 export const deleteCars = () => {
-	const id = ApiMock[0].id;
-	return id;
+	return 1;
 }
 
 export const createCar = () => {

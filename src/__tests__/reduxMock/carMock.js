@@ -10,34 +10,19 @@ export const carsSlice = createSlice({
   },
   extraReducers: {
 
-    // get cars
-    // [getCars.pending]: (state) => {
-    //   state.status = 'pending';
-    //   state.isCarsStored = false;
-    // },
+   // get Cars
     [getCars.fulfilled]: (state, payload ) => {
-      return {...state, carsList: payload, status: true}
+      state.carsList = payload;
+      state.status = 'success';
     },
-    // [getCars.rejected]: (state) => {
-    //   state.status = 'failed';
-    //   state.isCarsStored = false;
-    // },
+  
 
-    // // delete cars
-    // [deleteCars.pending]: (state) => {
-    //   state.status = 'pending delete action';
-    // },
-    // [deleteCars.fulfilled]: (state, { payload }) => {
-    //   state.carsList = state.carsList.filter((car) => car.id !== +payload);
-    //   state.status = 'success delete action';
-    // },
-    // [deleteCars.rejected]: (state) => {
-    //   state.status = 'failed delete action';
-    // },
-
-    // [createCar.fulfilled]: (state, action) => {
-    //   state.carsList = [...state.carsList, action.payload];
-    // },
+    // delete cars
+    [deleteCars.fulfilled]: (state, payload ) => {
+      state.carsList = state.carsList.filter((car) => car.id !== +payload);
+      state.status = 'success delete action';
+			return state
+    }
 
     // update car
     // [updateCar.fulfilled]: (state, { payload }) => {
