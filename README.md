@@ -9,7 +9,9 @@
 
 <p align="center">
   <img src="./public/cars.png" alt="Splash screen" />
-  <br />
+</p>
+
+<p align="center">
   <img src="./public/show-car.png" alt="Splash screen" />
 </p>
 
