@@ -31,7 +31,11 @@ const CarsList = () => {
         {carsList
         && carsList.map((car) => (
           <Link to={`/cars/${car.id}`} key={car.id}>
-            <CarCard name={car.name} description={car.description} picture={car.pictures} />
+            <CarCard
+              name={car.name}
+              description={car.description}
+              picture={car.pictures}
+            />
           </Link>
         ))}
       </div>
