@@ -80,9 +80,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+-The [original design idea](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) belongs to [Murat Korkmaz](https://www.behance.net/muratk).
 
 ## 📝 License
 
