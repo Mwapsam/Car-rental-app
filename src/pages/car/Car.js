@@ -12,7 +12,6 @@ const initState = {
 
 const Car = () => {
   const [reserve, setReserve] = useState(initState);
-  const [val, setVal] = useState();
 
   const dispatch = useDispatch();
   const { carsList, isCarsStored } = useSelector((state) => state.cars);
@@ -33,7 +32,6 @@ const Car = () => {
       date_reserved: reserve.date_reserved,
     }));
     dispatch(updateCar({ id: car.id, token: user.token, status }));
-    setVal(() => '');
   };
 
   const handleChange = (e) => {
@@ -66,31 +64,31 @@ const Car = () => {
           <h4 className="font-black text-lg uppercase border-b border-neutral-300 pb-2 mb-4">Reserve Car</h4>
           {user
           && (
-          <form onReset={handleSubmit}>
+          <form onSubmit={(e) => handleSubmit(e)}>
 
             <div className="w-full ">
               <label className="block uppercase tracking-wide text-neutral-800 text-xs font-bold mb-2">
                 City
               </label>
-              <input className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200 py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="city" value={val} onChange={handleChange} />
+              <input className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200 py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="city" onChange={handleChange} />
             </div>
 
             <div className="w-full">
               <label className="block uppercase tracking-wide text-neutral-800 text-xs font-bold mb-2">
                 Duration
               </label>
-              <input className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200  py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="duration" value={val} onChange={handleChange} />
+              <input className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200  py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="duration" onChange={handleChange} />
             </div>
 
             <div className="w-full ">
               <label className="block uppercase tracking-wide text-neutral-800 text-xs font-bold mb-2">
                 Date
               </label>
-              <input className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200  py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="date_reserved" value={val} onChange={handleChange} />
+              <input className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200  py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="date_reserved" onChange={handleChange} />
             </div>
 
             { car.reserved ? (<button className="bg-emerald-700 text-white font-bold py-2 px-6" type="button" disabled>Reserved</button>)
-              : (<button type="button" className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-6" onClick={() => createReserve(car.reserved)}>Reserve</button>)}
+              : (<button type="submit" className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-6" onClick={() => createReserve(car.reserved)}>Reserve</button>)}
 
           </form>
           )}
