@@ -40,7 +40,7 @@ export const carsSlice = createSlice({
     },
 
     [createCar.fulfilled]: (state, action) => {
-      state.carsList.unshift(action.payload);
+      state.carsList = [...state.carsList, action.payload];
     },
 
     // update car
