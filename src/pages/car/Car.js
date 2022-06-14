@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getCars } from '../../services/car.service';
+import { getCars, updateCar } from '../../services/car.service';
 import LocalStorage from '../../helpers/localStorage';
 import { CreateReservations } from '../../services/reservation.service';
 
@@ -24,7 +24,7 @@ const Car = () => {
     if (!isCarsStored) { dispatch(getCars()); }
   }, []);
 
-  const createReserve = () => {
+  const createReserve = (status) => {
     dispatch(CreateReservations({
       user_id: user.id,
       car_id: car.id,
@@ -32,6 +32,7 @@ const Car = () => {
       duration: reserve.duration,
       date_reserved: reserve.date_reserved,
     }));
+    dispatch(updateCar({ id: car.id, token: user.token, status }));
     setVal(() => '');
   };
 
@@ -88,8 +89,8 @@ const Car = () => {
               <input className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200  py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="date_reserved" value={val} onChange={handleChange} />
             </div>
 
-            { car.reserved ? (<button className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-6" type="button" disabled>Reserved</button>)
-              : (<button type="button" className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-6" onClick={createReserve}>Reserve</button>)}
+            { car.reserved ? (<button className="bg-emerald-700 text-white font-bold py-2 px-6" type="button" disabled>Reserved</button>)
+              : (<button type="button" className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-6" onClick={() => createReserve(car.reserved)}>Reserve</button>)}
 
           </form>
           )}

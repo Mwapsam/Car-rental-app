@@ -35,3 +35,15 @@ export const createCar = createAsyncThunk(
     return res;
   },
 );
+
+export const updateCar = createAsyncThunk(
+  'cars/updateCars',
+  async ({ id, token, status }) => {
+    const car = { reserved: !status };
+    const response = await axios.put(`http://localhost:3000/api/v1/cars/${id}`, car, {
+      headers: { Authorization: token },
+    });
+    const res = await response.data;
+    return res;
+  }
+);
