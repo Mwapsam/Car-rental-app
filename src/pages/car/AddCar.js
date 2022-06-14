@@ -19,10 +19,6 @@ const AddCar = () => {
     formData.append('car[price]', price);
     formData.append('car[pictures]', imageData);
 
-    for (const pair of formData.entries()) {
-      console.log(`${pair[0]}, ${pair[1]}`);
-    }
-
     dispatch(createCar(formData));
   };
   return (
