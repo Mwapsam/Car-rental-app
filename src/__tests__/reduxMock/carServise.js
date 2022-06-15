@@ -1,9 +1,6 @@
 import ApiMock from "./ApiMock";
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// export const getCars = () => {
-// 	return ApiMock;
-// }
 export const getCars = createAsyncThunk (
 	'cars/getCars', async () => {	
 		return ApiMock;

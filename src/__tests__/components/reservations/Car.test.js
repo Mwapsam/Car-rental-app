@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import store from '../../../store/index';
 import CarsList from '../../../pages/car/CarsList';
 import AddCar from '../../../pages/car/AddCar';
-import DeleteCars from '../../../pages/car/DeleteCars';
 
 it('should render Cars List component', () => {
 const tree = renderer.create(
@@ -24,11 +23,3 @@ const tree = renderer.create(
 expect(tree).toMatchSnapshot();
 });
 
-// it('should render DeleteCars component', () => {
-// const tree = renderer.create(
-// 	<Provider store={store}>
-// 		<DeleteCars />
-// 	</Provider>
-// )
-// expect(tree).toMatchSnapshot();
-// });
