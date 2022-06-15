@@ -21,13 +21,13 @@ export const carsSlice = createSlice({
     [deleteCars.fulfilled]: (state, payload ) => {
       state.carsList = state.carsList.filter((car) => car.id !== +payload);
       state.status = 'success delete action';
-			return state
-    }
+    },
 
     // update car
-    // [updateCar.fulfilled]: (state, { payload }) => {
-    //   state.carList = { ...state.carList, ...payload };
-    // },
+    [updateCar.fulfilled]: (state, { payload }) => {
+      state.carList = { ...state.carList, ...payload };
+			state.status = 'success update action';
+    },
   },
 });
 
