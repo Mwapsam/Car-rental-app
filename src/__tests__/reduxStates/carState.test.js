@@ -1,8 +1,8 @@
-import carsSlice from './carMock';
-import ApiMock from './ApiMock';
+import carsSlice from '../../__Mocks__/carReduxMock/carMock';
+import ApiMock from '../../__Mocks__/carReduxMock/ApiMock';
 import {
   getCars, updateCar, deleteCars, createCar,
-} from './carServise';
+} from '../../__Mocks__/carReduxMock/carServise';
 
 const prevState = {
   carsList: ApiMock,
