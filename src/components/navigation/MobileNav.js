@@ -14,7 +14,9 @@ const MobileNav = () => {
   const handleToggle = (e, link) => {
     e.preventDefault();
     dispatch(updateMenuState());
-    navigate(link);
+    if (link) {
+      navigate(link);
+    }
   };
   return (
     <nav className="md:hidden fixed bg-white w-full">
