@@ -2,6 +2,11 @@ import carsSlice   from "./carMock";
 import ApiMock from "./ApiMock"
 import { getCars, updateCar, deleteCars, createCar } from "./carServise"
 
+const prevState = {
+	carsList: ApiMock,
+	status: null,
+};
+
 test('Test get cars action', async () => {
 	const prevState = {
     carsList: [],
@@ -13,20 +18,12 @@ test('Test get cars action', async () => {
  })
 
  test('Test delete car action', () => {
-	const prevState = {
-    carsList: ApiMock,
-    status: null,
-  };
 	const action = deleteCars.fulfilled(1);
 	const state = carsSlice(prevState, action)
   expect(state.status).toEqual('success delete action')
  })
 
  test('Test update Car action', () => {
-	const prevState = {
-    carsList: ApiMock,
-    status: null,
-  };
 	const updatedCar = {
 		"id": 1,
 		"name": "BMW",
@@ -44,4 +41,24 @@ test('Test get cars action', async () => {
 	const action = updateCar.fulfilled(updatedCar);
 	const state = carsSlice(prevState, action)
   expect(state.status).toEqual('success update action')
+ })
+
+ test('Test create Car action', () => {
+	const newCar = {
+		"id": 4,
+		"name": "Renault",
+		"reserved": false,
+		"description": "blue",
+		"price": "15.0",
+		"pictures": null,
+		"user": {
+			"id": 1,
+			"name": "Admin",
+			"email": "admin@mail.com",
+			"password_digest": "$2a$12$hFg9VbTQII4Cn9vUhi0zS.pcuB1xm97TXGAGc17ZuLcRY9znVDU9C"
+		}
+	};
+	const action = createCar.fulfilled(newCar);
+	const state = carsSlice(prevState, action)
+  expect(state.status).toEqual('success create action')
  })

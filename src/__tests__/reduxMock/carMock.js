@@ -28,6 +28,12 @@ export const carsSlice = createSlice({
       state.carList = { ...state.carList, ...payload };
 			state.status = 'success update action';
     },
+
+		// create Car
+		[createCar.fulfilled]: (state, action) => {
+      state.carsList = [...state.carsList, action.payload];
+			state.status = 'success create action';
+    },
   },
 });
 
