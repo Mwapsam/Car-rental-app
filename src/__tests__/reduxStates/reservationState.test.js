@@ -1,4 +1,4 @@
-import reservationSlice from '../../__mocks__/reservationMock/reservationMock';
+import reservationSlice from '../../__Mocks__/reservationMock/reservationMock';
 import { getReservations, createReservations } from '../../__Mocks__/reservationMock/reservationService';
 import api from '../../__Mocks__/reservationMock/ApiMock';
 
