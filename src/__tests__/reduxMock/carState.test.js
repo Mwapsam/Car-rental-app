@@ -21,6 +21,7 @@ test('Test get cars action', async () => {
 	const action = deleteCars.fulfilled(1);
 	const state = carsSlice(prevState, action)
   expect(state.status).toEqual('success delete action')
+	expect(state.carsList.length).toEqual(2)
  })
 
  test('Test update Car action', () => {
