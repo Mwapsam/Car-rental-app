@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 import { deleteCars, getCars } from '../../services/car.service';
 import CarCard from '../../components/CarCard';
 
@@ -15,6 +16,7 @@ const DeleteCars = () => {
   const deleteCar = (e, id) => {
     e.preventDefault();
     dispatch(deleteCars({ id, token }));
+    toast.success("You've successfully deleted the car!");
   };
 
   return (

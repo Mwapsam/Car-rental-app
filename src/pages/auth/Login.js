@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { login } from '../../store/user';
 
 const Login = () => {
@@ -22,6 +23,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(values));
+    toast.success('You have successfully logged in!');
   };
 
   return (
