@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCars, updateCar, deleteCars, createCar } from "./carServise"
+import {
+  getCars, updateCar, deleteCars, createCar,
+} from './carServise';
 
 // create slice
-export const carsSlice = createSlice({
+const carsSlice = createSlice({
   name: 'cars',
   initialState: {
     carsList: [],
@@ -10,15 +12,14 @@ export const carsSlice = createSlice({
   },
   extraReducers: {
 
-   // get Cars
-    [getCars.fulfilled]: (state, payload ) => {
+    // get Cars
+    [getCars.fulfilled]: (state, payload) => {
       state.carsList = payload;
       state.status = 'success';
     },
-  
 
     // delete cars
-    [deleteCars.fulfilled]: (state, action ) => {
+    [deleteCars.fulfilled]: (state, action) => {
       state.carsList = state.carsList.filter((car) => car.id !== +action.payload);
       state.status = 'success delete action';
     },
@@ -26,13 +27,13 @@ export const carsSlice = createSlice({
     // update car
     [updateCar.fulfilled]: (state, action) => {
       state.carList = [...state.carsList, action.payload];
-			state.status = 'success update action';
+      state.status = 'success update action';
     },
 
-		// create Car
-		[createCar.fulfilled]: (state, action) => {
+    // create Car
+    [createCar.fulfilled]: (state, action) => {
       state.carsList = [...state.carsList, action.payload];
-			state.status = 'success create action';
+      state.status = 'success create action';
     },
   },
 });
