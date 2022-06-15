@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { getCars, updateCar } from '../../services/car.service';
 import LocalStorage from '../../helpers/localStorage';
 import { CreateReservations } from '../../services/reservation.service';
@@ -32,8 +33,8 @@ const Car = () => {
       date_reserved: reserve.date_reserved,
     }));
     dispatch(updateCar({ id: car.id, token: user.token, status }));
+    toast.success('You have successfully reserved the car!');
   };
-
   const handleChange = (e) => {
     setReserve({ ...reserve, [e.target.name]: e.target.value });
   };

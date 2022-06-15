@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
@@ -11,6 +12,7 @@ import DeleteCars from './pages/car/DeleteCars';
 import SideNav from './components/navigation/SideNav';
 import MobileNav from './components/navigation/MobileNav';
 import AdminRoute from './components/AdminRoute';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => (
   <BrowserRouter>
@@ -62,6 +64,7 @@ const App = () => (
 
       </div>
     </div>
+    <ToastContainer />
   </BrowserRouter>
 );
 

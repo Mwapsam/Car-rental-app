@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useDispatch, useSelector } from 'react-redux';
-
+import { toast } from 'react-toastify';
 import React, { useState } from 'react';
 import { signup } from '../../store/user';
 
@@ -24,6 +24,7 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(signup(values));
+    toast.success('You have successfully signed up!');
   };
 
   return (

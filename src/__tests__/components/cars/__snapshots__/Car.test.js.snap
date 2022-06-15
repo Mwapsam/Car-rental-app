@@ -78,7 +78,6 @@ exports[`should render AddCar component 1`] = `
     </div>
     <button
       className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-6"
-      onClick={[Function]}
       type="submit"
     >
       Create
