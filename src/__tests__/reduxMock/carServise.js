@@ -10,9 +10,11 @@ export const getCars = createAsyncThunk (
 	}
 );
 
-export const deleteCars = () => {
-	return 1;
-}
+export const deleteCars = createAsyncThunk (
+	'cars/deleteCars', async () => {
+		return 1;
+	}
+)
 
 export const createCar = () => {
 	const newCar = {

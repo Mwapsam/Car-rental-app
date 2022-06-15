@@ -12,12 +12,12 @@ test('Test get cars action', async () => {
   expect(state.status).toEqual('success')
  })
 
-// test('Test delete car action', () => {
-// 	const prevState = {
-//     carsList: ApiMock,
-//     status: null,
-//   }
-// 	const state = carsSlice(prevState, deleteCars())
-// 	const updateAPI = [ApiMock[1], ApiMock[2]];
-//   expect(state).toEqual({ carsList: updateAPI, status: 'success delete action'})
-//  })
+ test('Test delete car action', () => {
+	const prevState = {
+    carsList: ApiMock,
+    status: null,
+  };
+	const action = deleteCars.fulfilled(1);
+	const state = carsSlice(prevState, action)
+  expect(state.status).toEqual('success delete action')
+ })
