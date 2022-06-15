@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AddCar component 1`] = `
+<div
+  className="w-full"
+>
+  <div
+    className="flex justify-between items-center top-0 md:sticky border-b-2 border-neutral-2 w-full py-4 mb-8 bg-zinc-50"
+  >
+    <h4
+      className="font-black text-lg md:text-2xl uppercase p-0 m-0 "
+    >
+      Create Car
+    </h4>
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="w-full "
+    >
+      <label
+        className="block uppercase tracking-wide text-neutral-800 text-xs font-bold mb-2"
+      >
+        Name
+      </label>
+      <input
+        className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200 py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="w-full"
+    >
+      <label
+        className="block uppercase tracking-wide text-neutral-800 text-xs font-bold mb-2"
+      >
+        Description
+      </label>
+      <textarea
+        className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200  py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="w-full "
+    >
+      <label
+        className="block uppercase tracking-wide text-neutral-800 text-xs font-bold mb-2"
+      >
+        price
+      </label>
+      <input
+        className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200  py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        onChange={[Function]}
+        type="number"
+        value={0}
+      />
+    </div>
+    <div
+      className="w-full "
+    >
+      <label
+        className="block uppercase tracking-wide text-neutral-800 text-xs font-bold mb-2"
+      >
+        Image
+      </label>
+      <input
+        accept="image/*"
+        className="appearance-none block w-full bg-gray-200 text-neutral-800 border border-gray-200  py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        onChange={[Function]}
+        type="file"
+      />
+    </div>
+    <button
+      className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-6"
+      onClick={[Function]}
+      type="submit"
+    >
+      Create
+    </button>
+  </form>
+</div>
+`;
+
+exports[`should render Cars List component 1`] = `
+<div
+  className="w-full"
+>
+  <h4
+    className="font-black text-lg md:text-2xl uppercase p-0 m-0 "
+  >
+    Available Cars
+  </h4>
+  <div
+    className="grid grid-cols-3 gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2"
+  />
+</div>
+`;
