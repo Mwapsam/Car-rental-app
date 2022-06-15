@@ -60,5 +60,5 @@ test('Test get cars action', async () => {
 	};
 	const action = createCar.fulfilled(newCar);
 	const state = carsSlice(prevState, action)
-  expect(state.status).toEqual('success create action')
+  expect(state.carsList.length).toEqual(4)
  })
