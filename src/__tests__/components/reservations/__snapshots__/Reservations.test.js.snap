@@ -1,0 +1,272 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It should render Reservations component 1`] = `
+<div
+  className="w-full"
+>
+  <div
+    className="flex justify-between items-center top-0 md:sticky border-b-2 border-neutral-2 w-full py-4 mb-8 bg-zinc-50"
+  >
+    <h4
+      className="font-black text-lg md:text-2xl uppercase p-0 m-0 "
+    >
+      My Reservations
+    </h4>
+  </div>
+  <div
+    className="grid grid-cols-3 gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2"
+  />
+</div>
+`;
+
+exports[`Reservation should render correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="w-full"
+      >
+        <div
+          class="flex justify-between items-center top-0 md:sticky border-b-2 border-neutral-2 w-full py-4 mb-8 bg-zinc-50"
+        >
+          <h4
+            class="font-black text-lg md:text-2xl uppercase p-0 m-0 "
+          >
+            My Reservations
+          </h4>
+        </div>
+        <div
+          class="grid grid-cols-3 gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="w-full"
+    >
+      <div
+        class="flex justify-between items-center top-0 md:sticky border-b-2 border-neutral-2 w-full py-4 mb-8 bg-zinc-50"
+      >
+        <h4
+          class="font-black text-lg md:text-2xl uppercase p-0 m-0 "
+        >
+          My Reservations
+        </h4>
+      </div>
+      <div
+        class="grid grid-cols-3 gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Should render Car component 1`] = `
+<div
+  className="w-full"
+>
+  <div
+    className="flex justify-between items-center top-0 md:sticky border-b-2 border-neutral-2 w-full py-4 mb-8 bg-zinc-50"
+  >
+    <h4
+      className="font-black text-lg md:text-2xl uppercase p-0 m-0 "
+    />
+    <h4
+      className="font-black text-emerald-500 text-lg md:text-2xl p-0 m-0 "
+    >
+      $
+      /day
+    </h4>
+  </div>
+  <div />
+  <div
+    className="flex flex-col md:flex-row"
+  >
+    <div
+      className="flex-1 p-8"
+    >
+       
+      <img
+        alt="Sunset in the mountains"
+        className="w-full p-2"
+        src="http://localhost:3000/undefined"
+      />
+    </div>
+    <div
+      className="w-full md:w-2/6"
+    >
+      <h4
+        className="font-black text-lg uppercase border-b border-neutral-300 pb-2 mb-4"
+      >
+        Reserve Car
+      </h4>
+      <h4
+        className="font-black text-lg uppercase border-b border-neutral-300 pb-2 mt-8 mb-4"
+      >
+        Details
+      </h4>
+      <p />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should render Reservations component 1`] = `
+<div
+  className="w-full"
+>
+  <div
+    className="flex justify-between items-center top-0 md:sticky border-b-2 border-neutral-2 w-full py-4 mb-8 bg-zinc-50"
+  >
+    <h4
+      className="font-black text-lg md:text-2xl uppercase p-0 m-0 "
+    >
+      My Reservations
+    </h4>
+  </div>
+  <div
+    className="grid grid-cols-3 gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2"
+  />
+</div>
+`;
+
+exports[`Should render Reservations list component 1`] = `
+<div
+  className="w-full"
+>
+  <div
+    className="flex justify-between items-center top-0 md:sticky border-b-2 border-neutral-2 w-full py-4 mb-8 bg-zinc-50"
+  >
+    <h4
+      className="font-black text-lg md:text-2xl uppercase p-0 m-0 "
+    >
+      My Reservations
+    </h4>
+  </div>
+  <div
+    className="grid grid-cols-3 gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2"
+  />
+</div>
+`;
+
+exports[`should render Reservations component 1`] = `
+<div
+  className="w-full"
+>
+  <div
+    className="flex justify-between items-center top-0 md:sticky border-b-2 border-neutral-2 w-full py-4 mb-8 bg-zinc-50"
+  >
+    <h4
+      className="font-black text-lg md:text-2xl uppercase p-0 m-0 "
+    >
+      My Reservations
+    </h4>
+  </div>
+  <div
+    className="grid grid-cols-3 gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2"
+  />
+</div>
+`;
+
+exports[`should render the title 1`] = `
+<div
+  className="w-full"
+>
+  <div
+    className="flex justify-between items-center top-0 md:sticky border-b-2 border-neutral-2 w-full py-4 mb-8 bg-zinc-50"
+  >
+    <h4
+      className="font-black text-lg md:text-2xl uppercase p-0 m-0 "
+    />
+    <h4
+      className="font-black text-emerald-500 text-lg md:text-2xl p-0 m-0 "
+    >
+      $
+      /day
+    </h4>
+  </div>
+  <div />
+  <div
+    className="flex flex-col md:flex-row"
+  >
+    <div
+      className="flex-1 p-8"
+    >
+       
+      <img
+        alt="Sunset in the mountains"
+        className="w-full p-2"
+        src="http://localhost:3000/undefined"
+      />
+    </div>
+    <div
+      className="w-full md:w-2/6"
+    >
+      <h4
+        className="font-black text-lg uppercase border-b border-neutral-300 pb-2 mb-4"
+      >
+        Reserve Car
+      </h4>
+      <h4
+        className="font-black text-lg uppercase border-b border-neutral-300 pb-2 mt-8 mb-4"
+      >
+        Details
+      </h4>
+      <p />
+    </div>
+  </div>
+</div>
+`;
