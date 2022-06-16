@@ -8,7 +8,8 @@ const UserService = {
       'Access-Control-Allow-Origin': '*',
     },
   }),
-  login: (formData) => axios.post(`${process.env.REACT_APP_SERVER}login`, formData),
+  login: (formData) => axios.post(`${process.env.REACT_APP_SERVER}login`,
+    { user: formData, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } }),
   logout: () => {},
 };
 
