@@ -58,7 +58,7 @@ const Car = () => {
       <div className="flex flex-col md:flex-row">
         <div className="flex-1 p-8">
           {' '}
-          <img className="w-full p-2" src={`http://localhost:3000/${car.pictures}`} alt="Sunset in the mountains" />
+          <img className="w-full p-2" src={`${process.env.REACT_APP_SERVER}/${car.pictures}`} alt="Sunset in the mountains" />
         </div>
         <div className="w-full md:w-2/6">
 
