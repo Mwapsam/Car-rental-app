@@ -9,9 +9,7 @@ const Reservations = () => {
   const reservation = useSelector((state) => state.reservations);
 
   useEffect(() => {
-    if (!reservation) {
-      dispatch(getReservations());
-    }
+    dispatch(getReservations());
   },
   []);
 
